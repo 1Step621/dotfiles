@@ -10,6 +10,8 @@
     homeManager =
       { pkgs, ... }:
       {
+        programs.zoxide.enableZshIntegration = true;
+        programs.yazi.enableZshIntegration = true;
         programs.zsh = {
           enable = true;
 

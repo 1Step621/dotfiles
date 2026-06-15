@@ -12,7 +12,6 @@
 
     homeManager = { pkgs, ... }: {
       home.packages = [
-        pkgs.fzf
         pkgs.opencode
         pkgs.mergiraf
         pkgs.any-nix-shell

@@ -12,6 +12,7 @@
     homeManager = { pkgs, ... }: {
       home.packages = [
         pkgs.curl
+        pkgs.fzf
         pkgs.bat
         pkgs.unzip
         pkgs.wget

@@ -1,6 +1,10 @@
 {
   my.nix = {
-    os = {
+    os = { user, ... }: {
+      trusted-users = [
+        "root"
+        user.userName
+      ];
       nix.settings.experimental-features = [
         "nix-command"
         "flakes"
