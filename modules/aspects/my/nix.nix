@@ -19,8 +19,9 @@
         setFlakeRegistry = false;
       };
     };
-    homeManager = {
+    homeManager = { pkgs, lib, ... }: {
       nix = {
+        package = lib.mkForce pkgs.nix;
         settings = {
           auto-optimise-store = true;
           keep-outputs = true;
