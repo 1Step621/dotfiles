@@ -1,5 +1,5 @@
 {
-  my.linux.os = { pkgs, ... }: {
+  my.linux.nixos = { pkgs, ... }: {
     boot = {
       kernelPackages = pkgs.linuxPackages_latest;
       tmp.useTmpfs = true;

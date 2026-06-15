@@ -1,5 +1,5 @@
 {
-  my.pipewire.os = {
+  my.sound.os = {
     services.pipewire = {
       enable = true;
       alsa.enable = true;
