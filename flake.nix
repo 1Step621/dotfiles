@@ -50,7 +50,6 @@
     xremap-flake = {
       url = "github:xremap/nix-flake";
       inputs = {
-        flake-parts.follows = "flake-parts";
         nixpkgs.follows = "nixpkgs";
         xremap.follows = "";
       };

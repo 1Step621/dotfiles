@@ -5,6 +5,7 @@
       (den.batteries.unfree [
         "zsh-abbr"
         "cuda_nvml_dev"
+        "nvidia-x11"
       ])
 
       my.password

@@ -1,15 +1,18 @@
 {
   my.nix = {
-    os = { user, ... }: {
-      nix.settings = {
-        experimental-features = [
-          "nix-command"
-          "flakes"
-        ];
-        trusted-users = [
-          "root"
-          user.userName
-        ];
+    os = { user, pkgs, ... }: {
+      nix = {
+        package = pkgs.nix;
+        settings = {
+          experimental-features = [
+            "nix-command"
+            "flakes"
+          ];
+          trusted-users = [
+            "root"
+            user.userName
+          ];
+        };
       };
       nixpkgs.flake = {
         setNixPath = false;
