@@ -3,9 +3,6 @@
   my.cli-development = {
     includes = [
       my.git
-      my.nh
-      my.nix
-      my.nix-index
       my.direnv
       my.keybase
     ];

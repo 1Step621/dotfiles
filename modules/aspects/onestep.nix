@@ -10,7 +10,7 @@
       my.password
       my.system-basic
       den.batteries.primary-user
-      my.desktop-basic
+      # my.desktop-basic
       my.nvidia
       (my.windows "DAC833ABC83384B3")
       my.nittc

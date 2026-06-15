@@ -3,8 +3,10 @@
   my.desktop-basic = {
     includes = [
       my.sound
-      # my.gdm
-      # my.niri
+      my.gnome
+      my.gdm
+      my.niri
+      my.xdg-portal
     ];
   };
 }

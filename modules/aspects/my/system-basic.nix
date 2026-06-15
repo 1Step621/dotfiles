@@ -9,6 +9,11 @@
       my.localization
       my.networking
       my.swap
+      my.thermald
+      my.nix
+      my.nix-index
+      my.nh
+      my.home-manager
     ];
   };
 }
