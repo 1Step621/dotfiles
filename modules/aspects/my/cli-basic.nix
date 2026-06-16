@@ -22,6 +22,7 @@
         pkgs.ffmpeg
         pkgs.jq
         pkgs.btop
+        pkgs.libqalculate
       ];
     };
   };
