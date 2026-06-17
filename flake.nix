@@ -38,7 +38,7 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nur-yadokani = {
       url = "github:yadokani389/nur-packages";
       inputs.nixpkgs.follows = "nixpkgs";

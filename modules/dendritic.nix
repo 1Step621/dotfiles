@@ -7,6 +7,7 @@
   ];
 
   flake-file.inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     den.url = "github:denful/den";
     flake-file.url = "github:vic/flake-file";
     home-manager = {
