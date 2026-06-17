@@ -1,4 +1,4 @@
-{ my, ... }:
+{ my, inputs, ... }:
 {
   my.gui-basic = {
     includes = [
@@ -21,6 +21,7 @@
         pkgs.grim
         pkgs.slurp
         pkgs.wf-recorder
+        inputs.nur-yadokani.packages.${pkgs.stdenv.hostPlatform.system}.wf-recorder-toggle
         pkgs.hyprpicker
       ];
     };

@@ -1,5 +1,5 @@
 {
-  my.zed-editor =
+  my.zed-editor.homeManager =
     { pkgs, ... }:
     {
       programs.zed-editor = {

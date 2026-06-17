@@ -1,5 +1,5 @@
 {
-  my.kitty = {
+  my.kitty.homeManager = {
     programs.kitty = {
       enable = true;
       extraConfig = ''

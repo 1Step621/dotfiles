@@ -1,5 +1,5 @@
 {
-  my.hyprlock = {
+  my.hyprlock.homeManager = {
     programs.hyprlock = {
       enable = true;
       settings = {

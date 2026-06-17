@@ -1,8 +1,30 @@
 {
   my.gnome = {
-    os = {
+    os = { pkgs, ... }: {
       services.desktopManager.gnome.enable = true;
       programs.dconf.enable = true;
+      environment.gnome.excludePackages = [
+        pkgs.baobab # disk usage analyzer
+        pkgs.cheese # photo booth
+        pkgs.epiphany # web browser
+        pkgs.orca # screen reader
+        pkgs.simple-scan # document scanner
+        pkgs.yelp # help viewer
+        pkgs.file-roller # archive manager
+        pkgs.geary # email client
+        pkgs.seahorse # password manager
+
+        pkgs.gnome-calculator
+        pkgs.gnome-calendar
+        pkgs.gnome-characters
+        pkgs.gnome-clocks
+        pkgs.gnome-contacts
+        pkgs.gnome-logs
+        pkgs.gnome-maps
+        pkgs.gnome-music
+        pkgs.gnome-photos
+        pkgs.gnome-weather
+      ];
     };
     homeManager = {
       dconf.settings = {

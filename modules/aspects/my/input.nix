@@ -9,6 +9,7 @@
         waylandFrontend = true;
         addons = [
           pkgs.fcitx5-mozc-ut
+          inputs.nur-yadokani.packages.${pkgs.stdenv.hostPlatform.system}.karukan-im-gpu
         ];
       };
     };

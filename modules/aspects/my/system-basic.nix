@@ -12,8 +12,10 @@
       my.thermald
       my.nix
       my.nix-index
+      my.nix-ld
       my.nh
       my.home-manager
+      my.power-management
     ];
   };
 }

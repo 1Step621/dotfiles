@@ -6,8 +6,10 @@
         enable = true;
         shellWrapperName = "y";
 
-        plugins = with pkgs.yaziPlugins; {
-          inherit full-border;
+        enableZshIntegration = true;
+
+        plugins = {
+          inherit (pkgs.yaziPlugins) full-border;
         };
 
         initLua = ''

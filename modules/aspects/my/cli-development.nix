@@ -5,6 +5,7 @@
       my.git
       my.direnv
       my.keybase
+      my.podman
     ];
 
     homeManager = { pkgs, ... }: {

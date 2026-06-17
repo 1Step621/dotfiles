@@ -3,10 +3,8 @@
   my.cli-basic = {
     includes = [
       my.zsh
-      my.zsh-abbr
       my.helix
       my.yazi
-      my.zoxide
     ];
 
     homeManager = { pkgs, ... }: {
