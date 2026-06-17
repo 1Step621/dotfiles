@@ -17,5 +17,9 @@
       my.home-manager
       my.power-management
     ];
+
+    os = { user, ... }: {
+      users.users."${user.userName}".extraGroups = [ "input" ];
+    };
   };
 }
