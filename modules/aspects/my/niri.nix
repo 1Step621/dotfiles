@@ -195,6 +195,13 @@
           gestures.hot-corners.enable = false;
           prefer-no-csd = true;
           spawn-at-startup = [
+            {
+              command = [
+                "rsrpc-cli"
+                "--detectable-file"
+                ".config/rsrpc/detectables.json"
+              ];
+            }
             { command = [ "mprisence" ]; }
           ];
           hotkey-overlay.skip-at-startup = true;
