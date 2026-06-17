@@ -43,10 +43,6 @@
       url = "github:yadokani389/nur-packages";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    stm32cubeide = {
-      url = "github:1Step621/stm32cubeide.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     xremap-flake = {
       url = "github:xremap/nix-flake";
       inputs = {

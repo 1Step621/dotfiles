@@ -30,13 +30,11 @@
         wifi-if = "wlp2s0";
         hotspot-name = "lanstep";
       })
-
-      {
-        homeManager.programs.git.settings.user = {
-          name = "1Step621";
-          email = "onestep621@gmail.com";
-        };
-      }
     ];
+
+    homeManager.programs.git.settings.user = {
+      name = "1Step621";
+      email = "onestep621@gmail.com";
+    };
   };
 }

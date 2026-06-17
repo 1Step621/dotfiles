@@ -1,5 +1,5 @@
 {
-  my.zsh = {
+  my.shell = {
     os = {
       environment.shellAliases = {
         ls = null;

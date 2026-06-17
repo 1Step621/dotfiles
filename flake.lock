@@ -382,29 +382,8 @@
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
         "nur-yadokani": "nur-yadokani",
-        "stm32cubeide": "stm32cubeide",
         "xremap-flake": "xremap-flake",
         "zen-browser": "zen-browser"
-      }
-    },
-    "stm32cubeide": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1777731346,
-        "narHash": "sha256-hePmMHCi/98XOmZbJ3D0toRSIH0bXY1+0oU1bPsqt7I=",
-        "owner": "1Step621",
-        "repo": "stm32cubeide.nix",
-        "rev": "60a4ac46598122072ad7dcb5d020725ef3587e5d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "1Step621",
-        "repo": "stm32cubeide.nix",
-        "type": "github"
       }
     },
     "treefmt-nix": {

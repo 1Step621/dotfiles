@@ -2,7 +2,7 @@
 {
   my.cli-basic = {
     includes = [
-      my.zsh
+      my.shell
       my.helix
       my.yazi
     ];
