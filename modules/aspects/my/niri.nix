@@ -18,8 +18,8 @@
       programs.niri = {
         package = pkgs.niri;
 
-        input.keyboard.xkb.layout = "jp";
         settings = {
+          input.keyboard.xkb.layout = "jp";
           binds = {
             "Mod+Shift+Slash".action.show-hotkey-overlay = { };
 
