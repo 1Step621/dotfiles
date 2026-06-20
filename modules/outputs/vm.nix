@@ -1,17 +1,16 @@
 { inputs, ... }:
 {
   perSystem =
-    { pkgs, ... }:
+    { pkgs, lib, ... }:
     {
-      packages.vm = pkgs.writeShellApplication {
-        name = "vm";
-        text =
-          let
-            host = inputs.self.nixosConfigurations.zygodactyl.config;
-          in
-          ''
-            ${host.system.build.vm}/bin/run-${host.networking.hostName}-vm "$@"
+      packages = lib.attrsets.mapAttrs' (name: value: {
+        name = "vm-${name}";
+        value = pkgs.writeShellApplication {
+          name = "vm-${name}";
+          text = ''
+            ${value.config.system.build.vm}/bin/run-${name}-vm "$@"
           '';
-      };
+        };
+      }) inputs.self.nixosConfigurations;
     };
 }
