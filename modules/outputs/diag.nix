@@ -16,11 +16,11 @@
         name = "diag";
         runtimeInputs = [
           pkgs.mermaid-cli
-          pkgs.viu
+          pkgs.xdg-utils
         ];
         text = ''
           mmdc -i ${mmdFile} -o /tmp/diagram.png -s 10
-          viu /tmp/diagram.png
+          xdg-open /tmp/diagram.png
         '';
       };
     };
