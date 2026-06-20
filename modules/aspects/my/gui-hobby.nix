@@ -1,7 +1,9 @@
+{ my, ... }:
 {
-  my.gui-hobby.homeManager = { pkgs, ... }: {
-    home.packages = [
-      pkgs.gapless
+  my.gui-hobby = {
+    includes = [
+      my.desktop
+      my.gapless
     ];
   };
 }

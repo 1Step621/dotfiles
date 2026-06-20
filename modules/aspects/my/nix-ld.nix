@@ -1,5 +1,7 @@
 {
-  my.nix-ld.os = {
-    programs.nix-ld.enable = true;
+  my.nix-ld = {
+    os = {
+      programs.nix-ld.enable = true;
+    };
   };
 }

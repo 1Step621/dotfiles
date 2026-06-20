@@ -1,8 +1,10 @@
 {
-  my.gdm.os = {
-    services.displayManager.gdm = {
-      enable = true;
-      autoSuspend = false;
+  my.gdm = {
+    os = {
+      services.displayManager.gdm = {
+        enable = true;
+        autoSuspend = false;
+      };
     };
   };
 }

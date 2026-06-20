@@ -15,6 +15,7 @@
         ];
       };
     };
+
     homeManager = { pkgs, ... }: {
       imports = [ inputs.niri-flake.homeModules.niri ];
 
@@ -30,25 +31,11 @@
           binds = {
             "Mod+Shift+Slash".action.show-hotkey-overlay = { };
 
-            "Mod+Return".action.spawn = "kitty";
-            "Mod+D".action.spawn = "fuzzel";
-            "Mod+E".action.spawn = "zeditor";
-            "Mod+T".action.spawn = "hyprlock";
-            "Mod+P".action.spawn = [
-              "hyprpicker"
-              "--autocopy"
-            ];
             "Mod+O".action.toggle-overview = { };
             "Mod+S".action.set-dynamic-cast-window = { };
 
             "Mod+C".action.close-window = { };
             "Mod+W".action.toggle-window-floating = { };
-            "Mod+V".action.spawn = [
-              "dms"
-              "ipc"
-              "clipboard"
-              "open"
-            ];
             "Mod+R".action.switch-preset-column-width = { };
             "Mod+F".action.maximize-column = { };
             "Mod+G".action.fullscreen-window = { };
@@ -131,65 +118,8 @@
             "Mod+Alt+Down".action.set-window-height = "+10%";
 
             "Print".action.spawn-sh = [
-              # "flameshot gui --clipboard --path $HOME/Pictures/screenshots/"
               "niri msg action screenshot"
             ];
-            "Ctrl+Print".action.spawn-sh = [
-              "wf-recorder-toggle -f \"$HOME/Videos/screencaptures/$(date +%F-%H-%M-%S).mp4\""
-            ];
-
-            "XF86AudioRaiseVolume" = {
-              allow-when-locked = true;
-              action.spawn = [
-                "wpctl"
-                "set-volume"
-                "@DEFAULT_AUDIO_SINK@"
-                "0.05+"
-              ];
-            };
-            "XF86AudioLowerVolume" = {
-              allow-when-locked = true;
-              action.spawn = [
-                "wpctl"
-                "set-volume"
-                "@DEFAULT_AUDIO_SINK@"
-                "0.05-"
-              ];
-            };
-            "XF86MonBrightnessUp" = {
-              allow-when-locked = true;
-              action.spawn = [
-                "brightnessctl"
-                "set"
-                "5%+"
-              ];
-            };
-            "XF86MonBrightnessDown" = {
-              allow-when-locked = true;
-              action.spawn = [
-                "brightnessctl"
-                "set"
-                "5%-"
-              ];
-            };
-            "XF86AudioMute" = {
-              allow-when-locked = true;
-              action.spawn = [
-                "wpctl"
-                "set-mute"
-                "@DEFAULT_AUDIO_SINK@"
-                "toggle"
-              ];
-            };
-            "XF86AudioMicMute" = {
-              allow-when-locked = true;
-              action.spawn = [
-                "wpctl"
-                "set-mute"
-                "@DEFAULT_AUDIO_SOURCE@"
-                "toggle"
-              ];
-            };
           };
           input = {
             focus-follows-mouse = {
@@ -201,16 +131,6 @@
           };
           gestures.hot-corners.enable = false;
           prefer-no-csd = true;
-          spawn-at-startup = [
-            {
-              command = [
-                "rsrpc-cli"
-                "--detectable-file"
-                ".config/rsrpc/detectables.json"
-              ];
-            }
-            { command = [ "mprisence" ]; }
-          ];
           hotkey-overlay.skip-at-startup = true;
           cursor.theme = "Bibata-Modern-Classic";
           cursor.hide-after-inactive-ms = 10000;
@@ -276,70 +196,6 @@
               ];
               background-effect = {
                 blur = false;
-              };
-            }
-            {
-              matches = [
-                {
-                  app-id = "com.github.neithern.g4music";
-                }
-              ];
-              open-floating = true;
-              default-column-width.fixed = 800;
-              default-window-height.fixed = 500;
-            }
-            {
-              matches = [
-                {
-                  app-id = "zen-beta";
-                  title = "ピクチャーインピクチャー";
-                }
-                {
-                  app-id = "zen-beta";
-                  title = "Picture-in-Picture";
-                }
-              ];
-              open-floating = true;
-              default-column-width.fixed = 480;
-              default-window-height.fixed = 270;
-            }
-          ];
-          layer-rules = [
-            {
-              matches = [
-                {
-                  namespace = "dms";
-                }
-              ];
-              background-effect = {
-                xray = false;
-              };
-            }
-            {
-              matches = [
-                {
-                  namespace = "launcher";
-                }
-              ];
-              geometry-corner-radius = {
-                top-left = 8.0;
-                top-right = 8.0;
-                bottom-left = 8.0;
-                bottom-right = 8.0;
-              };
-              shadow = {
-                enable = true;
-                color = "#21252b3c";
-                offset = {
-                  x = 0;
-                  y = 15;
-                };
-                softness = 35;
-                spread = 10;
-              };
-              background-effect = {
-                blur = true;
-                xray = false;
               };
             }
           ];

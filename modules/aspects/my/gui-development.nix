@@ -1,9 +1,11 @@
-{ den, ... }:
+{ den, my, ... }:
 {
   my.gui-development = {
     includes = [
       (den.batteries.unfree [ "stm32cubemx" ])
+      my.desktop
     ];
+
     homeManager = { pkgs, ... }: {
       home.packages = [
         pkgs.arduino-ide
@@ -12,6 +14,7 @@
       ];
       home.sessionVariables.RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
     };
+
     os = { pkgs, ... }: {
       services.udev.packages = [
         pkgs.platformio-core.udev

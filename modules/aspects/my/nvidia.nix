@@ -9,12 +9,14 @@
         "nvidia-kernel-modules"
       ])
     ];
+
     homeManager = { pkgs, ... }: {
       home.packages = [
         pkgs.nvtopPackages.nvidia
       ];
     };
-    nixos = { config, ... }: {
+
+    os = { config, ... }: {
       hardware = {
         graphics.enable = true;
         nvidia = {

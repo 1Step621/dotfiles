@@ -1,26 +1,25 @@
 { my, den, ... }:
 {
-  my.system-basic = {
+  my.system = {
     includes = [
       den.batteries.hostname
       den.batteries.define-user
       (den.batteries.user-shell "zsh")
-      my.vm-basic
+      my.vm
       my.linux
       my.localization
       my.networking
       my.swap
-      my.thermald
       my.nix
       my.nix-index
       my.nix-ld
       my.nh
       my.home-manager
-      my.power-management
     ];
 
-    os = { user, ... }: {
-      users.users."${user.userName}".extraGroups = [ "input" ];
+    os = {
+      services.thermald.enable = true;
+      powerManagement.cpuFreqGovernor = "ondemand";
     };
   };
 }

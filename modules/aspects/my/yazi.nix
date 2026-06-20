@@ -1,67 +1,71 @@
+{ my, ... }:
 {
-  my.yazi.homeManager =
-    { pkgs, ... }:
-    {
-      programs.yazi = {
-        enable = true;
-        shellWrapperName = "y";
+  my.yazi = {
+    includes = [ my.shell ];
 
-        enableZshIntegration = true;
+    homeManager =
+      { pkgs, ... }:
+      {
+        programs.yazi = {
+          enable = true;
 
-        plugins = {
-          inherit (pkgs.yaziPlugins) full-border;
-        };
+          enableZshIntegration = true;
 
-        initLua = ''
-          require("full-border"):setup()
-        '';
-
-        theme = {
-          indicator.padding = {
-            open = "▐";
-            close = "▌";
+          plugins = {
+            inherit (pkgs.yaziPlugins) full-border;
           };
-          mode = {
-            normal_alt = {
-              fg = "black";
-              bg = "gray";
+
+          initLua = ''
+            require("full-border"):setup()
+          '';
+
+          theme = {
+            indicator.padding = {
+              open = "▐";
+              close = "▌";
             };
-            select_alt = {
-              fg = "black";
-              bg = "gray";
+            mode = {
+              normal_alt = {
+                fg = "black";
+                bg = "gray";
+              };
+              select_alt = {
+                fg = "black";
+                bg = "gray";
+              };
+            };
+            status = {
+              overall.fg = "black";
+              progress_label.fg = "black";
+              sep_left = {
+                open = "";
+                close = "";
+              };
+              sep_right = {
+                open = "";
+                close = "";
+              };
             };
           };
-          status = {
-            overall.fg = "black";
-            progress_label.fg = "black";
-            sep_left = {
-              open = "";
-              close = "";
-            };
-            sep_right = {
-              open = "";
-              close = "";
-            };
+
+          settings = {
+            opener.pdf = [
+              {
+                run = "tdf %s";
+                block = true;
+                desc = "PDF viewer";
+                for = "unix";
+              }
+            ];
+
+            open.prepend_rules = [
+              {
+                mime = "application/pdf";
+                use = "pdf";
+              }
+            ];
           };
-        };
-
-        settings = {
-          opener.pdf = [
-            {
-              run = "tdf %s";
-              block = true;
-              desc = "PDF viewer";
-              for = "unix";
-            }
-          ];
-
-          open.prepend_rules = [
-            {
-              mime = "application/pdf";
-              use = "pdf";
-            }
-          ];
         };
       };
-    };
+  };
 }

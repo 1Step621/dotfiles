@@ -1,10 +1,17 @@
+{ my, ... }:
 {
-  my.gui-creative.homeManager = { pkgs, ... }: {
-    home.packages = [
-      pkgs.krita
-      pkgs.inkscape
-      pkgs.blender
-      pkgs.onlyoffice-desktopeditors
+  my.gui-creative = {
+    includes = [
+      my.desktop
     ];
+
+    homeManager = { pkgs, ... }: {
+      home.packages = [
+        pkgs.krita
+        pkgs.inkscape
+        pkgs.blender
+        pkgs.onlyoffice-desktopeditors
+      ];
+    };
   };
 }

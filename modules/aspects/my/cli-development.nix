@@ -2,7 +2,8 @@
 {
   my.cli-development = {
     includes = [
-      my.git
+      my.shell
+      my.vcs
       my.direnv
       my.keybase
       my.podman

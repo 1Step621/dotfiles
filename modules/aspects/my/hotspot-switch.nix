@@ -1,5 +1,8 @@
+{ my, ... }:
 {
   my.hotspot-switch = {
+    includes = [ my.networking ];
+
     os =
       {
         pkgs,

@@ -2,12 +2,14 @@
 {
   den.aspects.onestep = {
     includes = [
-      my.password
-      my.system-basic
-      den.batteries.primary-user
-      my.desktop
+      my.system
       my.nvidia
+
+      den.batteries.primary-user
+      my.password
+      my.desktop
       my.nittc
+
       my.cli-basic
       my.cli-development
       my.cli-hobby
@@ -15,6 +17,7 @@
       my.gui-creative
       my.gui-hobby
       my.gui-development
+
       (my.windows "DAC833ABC83384B3")
       (my.hotspot-switch {
         ethernet-if = "enp100s0f3u3";

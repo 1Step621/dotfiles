@@ -1,8 +1,13 @@
+{ my, ... }:
 {
-  my.podman.nixos = {
-    virtualisation.podman = {
-      enable = true;
-      dockerCompat = true;
+  my.podman = {
+    includes = [ my.shell ];
+
+    os = {
+      virtualisation.podman = {
+        enable = true;
+        dockerCompat = true;
+      };
     };
   };
 }

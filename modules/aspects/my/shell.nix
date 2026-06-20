@@ -4,6 +4,7 @@
     includes = [
       (den.batteries.unfree [ "zsh-abbr" ])
     ];
+
     os = {
       environment.shellAliases = {
         ls = null;
@@ -11,6 +12,7 @@
         l = null;
       };
     };
+
     homeManager =
       { pkgs, ... }:
       {
@@ -62,6 +64,7 @@
               open = "xdg-open";
               code = "zeditor";
               zed = "zeditor";
+              y = "yazi";
               "ちぇん" = "cd";
               "チェン" = "cd";
             };

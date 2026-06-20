@@ -9,10 +9,10 @@
       my.gnome
       my.gdm
       my.niri
-      my.dank-material-shell
       my.xdg-portal
       my.gtk-theme
       my.hyprlock
+      my.dank-material-shell
       my.fuzzel
     ];
   };

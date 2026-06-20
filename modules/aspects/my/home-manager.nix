@@ -1,5 +1,7 @@
 {
-  my.home-manager.homeManager = {
-    programs.home-manager.enable = true;
+  my.home-manager = {
+    homeManager = {
+      programs.home-manager.enable = true;
+    };
   };
 }

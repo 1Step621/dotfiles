@@ -1,11 +1,16 @@
+{ my, ... }:
 {
-  my.direnv.homeManager = {
-    programs.direnv = {
-      enable = true;
-      enableZshIntegration = true;
-      nix-direnv.enable = true;
-      config = {
-        global.log_filter = "^(loading|unloading)";
+  my.direnv = {
+    includes = [ my.shell ];
+
+    homeManager = {
+      programs.direnv = {
+        enable = true;
+        enableZshIntegration = true;
+        nix-direnv.enable = true;
+        config = {
+          global.log_filter = "^(loading|unloading)";
+        };
       };
     };
   };

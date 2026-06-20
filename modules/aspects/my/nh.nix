@@ -1,10 +1,12 @@
 {
-  my.nh.homeManager = {
-    programs.nh = {
-      enable = true;
-      clean = {
+  my.nh = {
+    homeManager = {
+      programs.nh = {
         enable = true;
-        extraArgs = "--keep-since 30d";
+        clean = {
+          enable = true;
+          extraArgs = "--keep-since 30d";
+        };
       };
     };
   };

@@ -19,6 +19,7 @@
         setFlakeRegistry = false;
       };
     };
+
     homeManager = { pkgs, lib, ... }: {
       nix = {
         package = lib.mkForce pkgs.nix;

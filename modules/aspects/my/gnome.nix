@@ -1,5 +1,10 @@
+{ my, ... }:
 {
   my.gnome = {
+    includes = [
+      my.desktop
+    ];
+
     os = { pkgs, ... }: {
       services.desktopManager.gnome.enable = true;
       programs.dconf.enable = true;
