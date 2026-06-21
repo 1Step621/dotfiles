@@ -7,6 +7,7 @@
       my.direnv
       my.keybase
       my.podman
+      my.evcxr
     ];
 
     homeManager = { pkgs, ... }: {
@@ -20,11 +21,9 @@
         pkgs.uv
         pkgs.python3
         pkgs.nodejs
-        pkgs.lazygit
         pkgs.typst
         pkgs.delta
         pkgs.mold-unwrapped
-        pkgs.evcxr
         pkgs.clang-tools
       ];
     };

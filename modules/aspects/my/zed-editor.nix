@@ -152,6 +152,10 @@
             }
           ];
         };
+        programs.zsh.zsh-abbr.abbreviations = {
+          code = "zeditor";
+          zed = "zeditor";
+        };
         xdg.mimeApps.defaultApplications = {
           "text/plain" = "dev.zed.Zed";
           "text/csv" = "dev.zed.Zed";

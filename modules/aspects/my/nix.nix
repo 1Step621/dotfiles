@@ -44,6 +44,10 @@
           ];
         };
       };
+
+      programs.zsh.zsh-abbr.abbreviations = {
+        why-depends = "nix why-depends /run/current-system \"$(which %)\"";
+      };
     };
   };
 }
