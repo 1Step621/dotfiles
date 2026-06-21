@@ -49,6 +49,8 @@
         "audio/ogg" = "org.gnome.Decibels";
         "audio/flac" = "org.gnome.Decibels";
         "audio/aac" = "org.gnome.Decibels";
+        "image/png" = "org.gnome.Loupe";
+        "image/jpeg" = "org.gnome.Loupe";
       };
 
       home.sessionVariables.GSK_RENDERER = "gl";
