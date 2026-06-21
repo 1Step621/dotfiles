@@ -2,6 +2,9 @@
 {
   my.input = {
     homeManager = { pkgs, ... }: {
+      home.packages = [
+        pkgs.fcitx5-mellow-themes
+      ];
       imports = [ inputs.xremap-flake.homeManagerModules.default ];
       i18n.inputMethod = {
         enable = true;
