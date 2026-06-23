@@ -1,7 +1,10 @@
 { my, ... }:
 {
   my.rsrpc = {
-    includes = [ my.shell ];
+    includes = [
+      my.shell
+      my.desktop
+    ];
 
     homeManager = { pkgs, ... }: {
       home.packages = [
