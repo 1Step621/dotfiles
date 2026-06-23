@@ -98,9 +98,12 @@
               clangd.binary.arguments = [
                 "--header-insertion=never"
               ];
-              tinymist.settings = {
-                exportPdf = "onSave";
-                outputPath = "$root/$dir/$name";
+              tinymist = {
+                binary.path = "${pkgs.tinymist}/bin/tinymist";
+                settings = {
+                  exportPdf = "onSave";
+                  outputPath = "$root/$dir/$name";
+                };
               };
             };
             languages = {
