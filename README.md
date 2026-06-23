@@ -47,6 +47,6 @@ You can use this flake as your own flake input. For more information, see the [D
 ```nix
 { inputs, ... }: {
   # Import "my" namespace from this flake, merging with local definitions
-  imports = [ (inputs.den.namespace "my" [ inputs.team-config ]) ];
+  imports = [ (inputs.den.namespace "my" [ inputs.onestep-dotfiles ]) ];
 }
 ```
