@@ -173,6 +173,7 @@
               matches = [
                 {
                   is-window-cast-target = true;
+                  is-active = true;
                 }
               ];
               focus-ring.active.gradient = {
