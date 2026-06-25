@@ -21,7 +21,6 @@
 
       home.packages = [
         pkgs.xwayland-satellite
-        pkgs.awww
       ];
       programs.niri = {
         package = pkgs.niri;
