@@ -113,7 +113,6 @@
             "poweroff"
             "reboot"
           ];
-          customPowerActionLock = "hyprlock";
           screenPreferences = {
             dock = [
               "all"
