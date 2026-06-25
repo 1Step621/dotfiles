@@ -8,12 +8,12 @@
       programs.kitty = {
         enable = true;
         extraConfig = ''
-          # zshell
           shell zsh
 
           auto_reload_config -1
 
-          # Remove close window confirm
+          clipboard_control write-clipboard read-clipboard write-primary read-primary
+
           confirm_os_window_close 0
 
           window_padding_width 5 10
