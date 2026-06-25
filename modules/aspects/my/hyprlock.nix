@@ -3,7 +3,7 @@
   my.hyprlock = {
     includes = [ my.desktop ];
 
-    homeManager = {
+    homeManager = { pkgs, ... }: {
       programs.niri.settings.binds."Mod+T".action.spawn = "hyprlock";
       programs.dank-material-shell.settings.customPowerActionLock = "hyprlock";
       programs.hyprlock = {
@@ -17,7 +17,7 @@
 
           background = [
             {
-              path = "~/Wallpapers/lockscreen.png";
+              path = "${pkgs.nixos-artwork.wallpapers.nineish-catppuccin-macchiato-alt}/share/backgrounds/nixos/nix-wallpaper-nineish-catppuccin-macchiato-alt.png";
             }
           ];
 
