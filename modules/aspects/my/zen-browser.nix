@@ -20,11 +20,11 @@
         {
           matches = [
             {
-              app-id = "zen-beta";
+              app-id = "zen";
               title = "ピクチャーインピクチャー";
             }
             {
-              app-id = "zen-beta";
+              app-id = "zen";
               title = "Picture-in-Picture";
             }
           ];
