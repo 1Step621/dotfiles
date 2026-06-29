@@ -9,6 +9,7 @@
       my.password
       my.desktop
       my.nittc
+      my.printing
 
       my.cli-basic
       my.cli-development
