@@ -14,12 +14,14 @@
           pkgs.roboto-mono
           pkgs.inter
           pkgs.lmmath
+          pkgs.times-newer-roman
           pkgs.nerd-fonts.roboto-mono
           pkgs.nerd-fonts.noto
         ];
         fontconfig = {
           defaultFonts = {
             serif = [
+              "Times Newer Roman"
               "Noto Serif CJK JP"
               "Noto Emoji"
             ];
