@@ -49,6 +49,9 @@
               debounce_ms = 0;
             };
             ui_font_family = "Inter";
+            ui_font_fallbacks = [
+              "Noto Sans CJK JP"
+            ];
             session.trust_all_worktrees = true;
             cli_default_open_behavior = "new_window";
             git_panel = {
@@ -68,7 +71,6 @@
             current_line_highlight = "all";
             cursor_blink = true;
             buffer_font_fallbacks = [
-              "NotoMono Nerd Font Mono"
               "Noto Sans CJK JP"
             ];
             buffer_font_family = "Roboto Mono";
