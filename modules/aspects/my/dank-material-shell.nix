@@ -75,6 +75,28 @@
               width = 50;
             }
           ];
+          dashTabs = [
+            {
+              id = "overview";
+              enabled = true;
+            }
+            {
+              id = "media";
+              enabled = true;
+            }
+            {
+              id = "wallpaper";
+              enabled = false;
+            }
+            {
+              id = "weather";
+              enabled = false;
+            }
+            {
+              id = "settings";
+              enabled = true;
+            }
+          ];
           showWorkspaceIndex = true;
           showWorkspaceApps = true;
           maxWorkspaceIcons = 99;
