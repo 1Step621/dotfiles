@@ -1,7 +1,6 @@
 {
   my.windows = partition-id: {
     os = {
-      time.hardwareClockInLocalTime = true;
       fileSystems."/mnt/windows" = {
         device = "/dev/disk/by-uuid/${partition-id}";
         fsType = "ntfs";
