@@ -7,6 +7,7 @@
 
       programs.zsh.zsh-abbr.abbreviations = {
         open = "xdg-open";
+        o = "xdg-open";
       };
     };
   };
