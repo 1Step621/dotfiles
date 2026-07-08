@@ -126,7 +126,11 @@
               enable = true;
             };
             warp-mouse-to-focus.enable = true;
-            touchpad.dwt = true;
+            touchpad = {
+              dwt = false;
+              dwtp = false;
+              click-method = "clickfinger";
+            };
           };
           gestures.hot-corners.enable = false;
           prefer-no-csd = true;
