@@ -24,15 +24,10 @@
             "codex-acp"
           ];
           userSettings = {
+            default_open_behavior = "new_window";
             outline_panel.button = false;
             collaboration_panel.button = false;
             debugger.button = false;
-            agent.default_model = {
-              provider = "copilot_chat";
-              model = "gpt-5.2-codex";
-              enable_thinking = true;
-              effort = "high";
-            };
             semantic_tokens = "combined";
             diagnostics.inline.enabled = true;
             git.inline_blame.enabled = false;
