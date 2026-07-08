@@ -4,15 +4,6 @@
       boot = {
         supportedFilesystems.ntfs = lib.mkForce false;
         kernelModules = [ "ntfs" ];
-        kernelPatches = [
-          {
-            name = "enable-new-ntfs";
-            patch = null;
-            structuredExtraConfig = {
-              NTFS_FS = lib.kernel.module;
-            };
-          }
-        ];
         loader.limine.extraEntries = ''
           /Windows
               protocol: efi
