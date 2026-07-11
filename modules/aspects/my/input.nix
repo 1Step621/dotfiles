@@ -31,7 +31,10 @@
       };
     };
     os = { user, ... }: {
-      users.users."${user.userName}".extraGroups = [ "input" ];
+      users.users."${user.userName}".extraGroups = [
+        "input"
+        "uinput"
+      ];
       hardware.uinput.enable = true;
       services.udev.extraRules = ''
         KERNEL=="uinput", GROUP="input", TAG+="uaccess"
