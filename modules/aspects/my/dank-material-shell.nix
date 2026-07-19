@@ -109,6 +109,7 @@
           mediaAdaptiveWidthEnabled = false;
           audioVisualizerEnabled = false;
           clockDateFormat = "M/d ddd";
+          clockFormat = "24h";
           appDrawerSectionViewModes = {
             apps = "list";
           };
