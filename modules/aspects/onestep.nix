@@ -24,6 +24,7 @@
         wifi-if = "wlp2s0";
         hotspot-name = "lanstep";
       })
+      my.virtualbox
     ];
 
     homeManager.programs.git.settings.user = {
