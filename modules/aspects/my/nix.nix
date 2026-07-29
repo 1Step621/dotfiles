@@ -1,3 +1,4 @@
+{ inputs, ... }:
 {
   my.nix = {
     os = { user, pkgs, ... }: {
@@ -13,6 +14,7 @@
             user.userName
           ];
         };
+        registry.syspkgs.flake = inputs.nixpkgs;
       };
       nixpkgs.flake = {
         setNixPath = false;
