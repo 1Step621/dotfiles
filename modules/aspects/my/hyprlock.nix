@@ -9,11 +9,8 @@
       programs.hyprlock = {
         enable = true;
         settings = {
-          general = {
-            disable_loading_bar = false;
-            hide_cursor = true;
-            no_fade_in = false;
-          };
+          general.hide_cursor = true;
+          auth."pam:module" = "su";
 
           background = [
             {
