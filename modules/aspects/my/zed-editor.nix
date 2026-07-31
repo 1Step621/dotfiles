@@ -65,10 +65,10 @@
             minimap.show = "never";
             current_line_highlight = "all";
             cursor_blink = true;
+            buffer_font_family = "RobotoMono Nerd Font Propo";
             buffer_font_fallbacks = [
               "Noto Sans CJK JP"
             ];
-            buffer_font_family = "Roboto Mono";
             file_types = {
               cpp = [
                 "*.hpp"
