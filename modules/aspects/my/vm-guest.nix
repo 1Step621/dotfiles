@@ -1,5 +1,5 @@
 {
-  my.vm = {
+  my.vm-guest = {
     os = {
       virtualisation.vmVariant.virtualisation = {
         cores = 16;

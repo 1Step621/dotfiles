@@ -5,7 +5,7 @@
       den.batteries.hostname
       den.batteries.define-user
       (den.batteries.user-shell "zsh")
-      my.vm
+      my.vm-guest
       my.linux
       my.localization
       my.networking
