@@ -39,10 +39,7 @@
             };
             close_on_file_delete = true;
             auto_signature_help = true;
-            focus_follows_mouse = {
-              enabled = true;
-              debounce_ms = 0;
-            };
+            focus_follows_mouse.enabled = false;
             ui_font_family = "Inter";
             ui_font_fallbacks = [
               "Noto Sans CJK JP"
