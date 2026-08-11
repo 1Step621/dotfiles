@@ -47,6 +47,7 @@
       url = "github:yadokani389/nur-packages";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    reaper-flake.url = "github:9Prestidigitator/reaper-flake";
     xremap-flake = {
       url = "github:xremap/nix-flake";
       inputs = {

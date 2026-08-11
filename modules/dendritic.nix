@@ -57,5 +57,8 @@
         xremap.follows = "";
       };
     };
+    reaper-flake = {
+      url = "github:9Prestidigitator/reaper-flake";
+    };
   };
 }
