@@ -52,9 +52,9 @@
           };
 
           theme = {
-            active = "Reapertips Theme.ReaperThemeZip";
-            packages = [
-              reaper-pkgs.reapertips-theme
+            active = "Reapertips Theme - Green - Noto CJK JP + Roboto Mono.ReaperThemeZip";
+            colorThemes = [
+              (./. + "/../../assets/Reapertips Theme - Green - Noto CJK JP + Roboto Mono.ReaperThemeZip")
             ];
           };
 
@@ -76,14 +76,35 @@
               keyCode = 249;
               command = 990;
               section = 0;
-              comment = "Ctrl+MouseWheel -> View: Zoom horizontally";
+              comment = "Ctrl+MouseWheel -> Zoom horizontally";
             }
             {
               modifierFlags = 255;
               keyCode = 253;
               command = 991;
               section = 0;
-              comment = "Ctrl+Shift+MouseWheel -> View: Zoom vertically";
+              comment = "Ctrl+Shift+MouseWheel -> Zoom vertically";
+            }
+            {
+              modifierFlags = 255;
+              keyCode = 248;
+              command = 40660;
+              section = 32060;
+              comment = "MouseWheel -> Scroll horizontally (MIDI)";
+            }
+            {
+              modifierFlags = 255;
+              keyCode = 249;
+              command = 40431;
+              section = 32060;
+              comment = "Ctrl+MouseWheel -> Zoom horizontally (MIDI)";
+            }
+            {
+              modifierFlags = 255;
+              keyCode = 253;
+              command = 40430;
+              section = 32060;
+              comment = "Ctrl+Shift+MouseWheel -> Zoom vertically (MIDI)";
             }
           ];
         };
