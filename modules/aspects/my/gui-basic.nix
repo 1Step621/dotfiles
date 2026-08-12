@@ -17,7 +17,7 @@
           "--autocopy"
         ];
         "Ctrl+Print".action.spawn-sh = [
-          "wf-recorder-toggle -f \"$HOME/Videos/screencaptures/$(date +%F-%H-%M-%S).mp4\""
+          "wf-recorder-toggle --audio=\"$(pactl get-default-sink).monitor\" -f \"$HOME/Videos/screencaptures/$(date +%F-%H-%M-%S).mp4\""
         ];
         "XF86MonBrightnessUp" = {
           allow-when-locked = true;
@@ -47,6 +47,7 @@
         pkgs.nautilus
         pkgs.grim
         pkgs.slurp
+        pkgs.pulseaudio
         pkgs.wf-recorder
         inputs.nur-yadokani.packages.${pkgs.stdenv.hostPlatform.system}.wf-recorder-toggle
         pkgs.hyprpicker
