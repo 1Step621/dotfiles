@@ -43,10 +43,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    nur-yadokani = {
-      url = "github:yadokani389/nur-packages";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     reaper-flake.url = "github:9Prestidigitator/reaper-flake";
     xremap-flake = {
       url = "github:xremap/nix-flake";

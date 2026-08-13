@@ -27,48 +27,60 @@
 
         wine = pkgs.wineWow64Packages.yabridge;
 
-        reaper-vst-sync = pkgs.writeShellScriptBin "reaper-vst-sync" ''
-          set -euo pipefail
-          export WINEPREFIX="$HOME/.wine-reaper"
-          vst3_dir="$WINEPREFIX/drive_c/Program Files/Common Files/VST3"
-          if [ -d "$vst3_dir" ]; then
-            ${pkgs.yabridgectl}/bin/yabridgectl add "$vst3_dir" 2>/dev/null || true
-          fi
-          ${pkgs.yabridgectl}/bin/yabridgectl sync
-        '';
+        reaper-vst-sync = pkgs.writeShellApplication {
+          name = "reaper-vst-sync";
+          runtimeInputs = [
+            pkgs.yabridgectl
+          ];
+          text = ''
+            export WINEPREFIX="$HOME/.wine-reaper"
+            vst3_dir="$WINEPREFIX/drive_c/Program Files/Common Files/VST3"
+            if [ -d "$vst3_dir" ]; then
+              yabridgectl add "$vst3_dir" 2>/dev/null || true
+            fi
+            yabridgectl sync
+          '';
+        };
 
-        reaper-vst-install = pkgs.writeShellScriptBin "reaper-vst-install" ''
-          set -euo pipefail
-          if [ "$#" -eq 0 ]; then
-            echo "usage: reaper-vst-install <installer.exe|installer.msi|plugin.vst3>"
-            exit 1
-          fi
-          export WINEPREFIX="$HOME/.wine-reaper"
-          src="$1"
-          vst3_dir="$WINEPREFIX/drive_c/Program Files/Common Files/VST3"
-          mkdir -p "$vst3_dir"
-          case "$src" in
-            *.exe)
-              ${wine}/bin/wine "$@"
-              ;;
-            *.msi)
-              ${wine}/bin/wine msiexec /i "$src"
-              ;;
-            *.vst3)
-              name="$(basename "$src")"
-              rm -rf "$vst3_dir/$name"
-              cp -a -- "$src" "$vst3_dir/$name"
-              echo "Installed VST3: $name"
-              ;;
-            *)
-              echo "unsupported file: $src"
-              echo "expected .exe, .msi, or .vst3"
+        reaper-vst-install = pkgs.writeShellApplication {
+          name = "reaper-vst-install";
+          runtimeInputs = [
+            wine
+            pkgs.yabridgectl
+            pkgs.coreutils
+          ];
+          text = ''
+            if [ "$#" -eq 0 ]; then
+              echo "usage: reaper-vst-install <installer.exe|installer.msi|plugin.vst3>"
               exit 1
-              ;;
-          esac
-          ${pkgs.yabridgectl}/bin/yabridgectl add "$vst3_dir" 2>/dev/null || true
-          ${pkgs.yabridgectl}/bin/yabridgectl sync
-        '';
+            fi
+            export WINEPREFIX="$HOME/.wine-reaper"
+            src="$1"
+            vst3_dir="$WINEPREFIX/drive_c/Program Files/Common Files/VST3"
+            mkdir -p "$vst3_dir"
+            case "$src" in
+              *.exe)
+                wine "$@"
+                ;;
+              *.msi)
+                wine msiexec /i "$src"
+                ;;
+              *.vst3)
+                name="$(basename "$src")"
+                rm -rf "''${vst3_dir:?vst3_dir is not set}/''${name:?name is not set}"
+                cp -a -- "$src" "$vst3_dir/$name"
+                echo "Installed VST3: $name"
+                ;;
+              *)
+                echo "unsupported file: $src"
+                echo "expected .exe, .msi, or .vst3"
+                exit 1
+                ;;
+            esac
+            yabridgectl add "$vst3_dir" 2>/dev/null || true
+            yabridgectl sync
+          '';
+        };
       in
       {
         imports = [
