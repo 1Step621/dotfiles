@@ -1,6 +1,6 @@
 {
   my.sound = {
-    os = {
+    os = { user, ... }: {
       services.pipewire = {
         enable = true;
         alsa.enable = true;
@@ -8,6 +8,21 @@
         pulse.enable = true;
       };
       security.rtkit.enable = true;
+      users.users."${user.userName}".extraGroups = [ "audio" ];
+      security.pam.loginLimits = [
+        {
+          domain = "@audio";
+          type = "-";
+          item = "memlock";
+          value = "unlimited";
+        }
+        {
+          domain = "@audio";
+          type = "-";
+          item = "rtprio";
+          value = "95";
+        }
+      ];
     };
 
     homeManager = {
