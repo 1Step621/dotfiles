@@ -1,4 +1,9 @@
-{ den, inputs, ... }:
+{
+  den,
+  my,
+  inputs,
+  ...
+}:
 {
   my.reaper = {
     includes = [
@@ -7,10 +12,16 @@
         "reaper-config-wrapper"
         "vital"
       ])
+      my.desktop
     ];
 
     homeManager =
-      { pkgs, reaperActions, ... }:
+      {
+        pkgs,
+        reaperActions,
+        reaperMenus,
+        ...
+      }:
       let
         reaper-pkgs = inputs.reaper-flake.packages.${pkgs.stdenv.hostPlatform.system};
 
@@ -104,6 +115,112 @@
             };
             project.defaultProjectTemplate = "${../../assets/default.RPP}";
             plugIns.reascript.python.enable = true;
+          };
+
+          menus = {
+            "${reaperMenus.toolbars.main}".entries = [
+              {
+                action = 40021;
+                label = "Project settings...";
+              }
+              {
+                action = 40025;
+                label = "Open project...";
+              }
+              {
+                action = 40026;
+                label = "Save project";
+              }
+              {
+                action = 40029;
+                label = "Undo";
+              }
+              {
+                action = 40030;
+                label = "Redo";
+              }
+              {
+                action = 40023;
+                label = "New project...";
+              }
+
+              {
+                action = 50124;
+                label = "Media explorer: Show/hide media explorer";
+                icon = "toolbar_item_explode_lane_take.png";
+              }
+              {
+                action = 41589;
+                label = "Item properties: Toggle show media item/take properties";
+                icon = "toolbar_item_properties.png";
+              }
+              {
+                action = 42411;
+                label = "Open selected item source media in explorer/finder";
+                icon = "toolbar_zoom_selected.png";
+              }
+              {
+                action = 42432;
+                label = "Item: Glue items within time selection";
+                icon = "toolbar_glue.png";
+              }
+              {
+                action = 40015;
+                label = "File: Render project to disk...";
+                icon = "toolbar_audio_waveform_render_disk_mono.png";
+              }
+
+              reaperMenus.divider
+
+              {
+                action = 40364;
+                label = "Enable metronome";
+              }
+              {
+                action = 42616;
+                label = "Marquee selection";
+                toolbarFlags = 1;
+              }
+              {
+                action = 40041;
+                label = "Enable auto-crossfade";
+              }
+              {
+                action = 1156;
+                label = "Enable item and track media/razor edit grouping";
+              }
+              {
+                action = 1162;
+                label = "Toggle ripple editing";
+                toolbarFlags = 1;
+              }
+              {
+                action = 40070;
+                label = "Move envelope points with media items";
+              }
+              {
+                action = 1157;
+                label = "Enable snapping";
+              }
+              {
+                action = 1135;
+                label = "Enable locking";
+              }
+              {
+                action = 42618;
+                label = "Razor editing";
+                toolbarFlags = 1;
+              }
+              {
+                action = 40145;
+                label = "Show arrange view grid";
+              }
+              {
+                action = 40605;
+                label = "Show action list";
+                icon = "toolbar_misc_question_random.png";
+              }
+            ];
           };
 
           extensions = {
