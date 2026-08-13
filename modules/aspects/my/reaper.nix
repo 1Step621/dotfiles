@@ -143,7 +143,6 @@
                 action = 40023;
                 label = "New project...";
               }
-
               {
                 action = 50124;
                 label = "Media explorer: Show/hide media explorer";
@@ -169,9 +168,7 @@
                 label = "File: Render project to disk...";
                 icon = "toolbar_audio_waveform_render_disk_mono.png";
               }
-
               reaperMenus.divider
-
               {
                 action = 40364;
                 label = "Enable metronome";
