@@ -19,7 +19,7 @@
         reaper-vst-sync = pkgs.writeShellScriptBin "reaper-vst-sync" ''
           set -euo pipefail
           export WINEPREFIX="$HOME/.wine-reaper"
-          vst3_dir="$HOME/.wine/drive_c/Program Files/Common Files/VST3"
+          vst3_dir="$WINEPREFIX/drive_c/Program Files/Common Files/VST3"
           if [ -d "$vst3_dir" ]; then
             ${pkgs.yabridgectl}/bin/yabridgectl add "$vst3_dir" 2>/dev/null || true
           fi
