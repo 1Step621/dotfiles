@@ -5,7 +5,7 @@
 
     homeManager = {
       imports = [
-        inputs.zen-browser.homeModules.beta
+        inputs.zen-browser-flake.homeModules.beta
       ];
 
       programs.zen-browser = {

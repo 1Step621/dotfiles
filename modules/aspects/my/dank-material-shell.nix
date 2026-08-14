@@ -3,9 +3,9 @@
   my.dank-material-shell = {
     includes = [ my.desktop ];
 
-    homeManager = { pkgs, ... }: {
+    homeManager = {
       imports = [
-        inputs.dms.homeModules.dank-material-shell
+        inputs.dank-material-shell.homeModules.dank-material-shell
       ];
 
       programs.niri.settings = {

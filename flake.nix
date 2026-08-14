@@ -4,17 +4,13 @@
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 
   inputs = {
+    dank-material-shell = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     den.url = "github:denful/den";
     den-diagram = {
       url = "github:denful/den-diagram";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    dgop = {
-      url = "github:AvengeMedia/dgop";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    dms = {
-      url = "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     flake-file.url = "github:vic/flake-file";
@@ -43,7 +39,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    reaper-flake.url = "github:9Prestidigitator/reaper-flake";
+    reaper-flake = {
+      url = "github:9Prestidigitator/reaper-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     xremap-flake = {
       url = "github:xremap/nix-flake";
       inputs = {
@@ -51,7 +50,7 @@
         xremap.follows = "";
       };
     };
-    zen-browser = {
+    zen-browser-flake = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {
         home-manager.follows = "home-manager";

@@ -22,7 +22,7 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    zen-browser = {
+    zen-browser-flake = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
@@ -38,12 +38,8 @@
         xwayland-satellite-unstable.follows = "";
       };
     };
-    dms = {
+    dank-material-shell = {
       url = "github:AvengeMedia/DankMaterialShell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    dgop = {
-      url = "github:AvengeMedia/dgop";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     xremap-flake = {
@@ -55,6 +51,7 @@
     };
     reaper-flake = {
       url = "github:9Prestidigitator/reaper-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 }
