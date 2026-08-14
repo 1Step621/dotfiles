@@ -46,7 +46,7 @@
                 <test name="family" qual="any" compare="contains">
                   <string>Noto Sans</string>
                 </test>
-                <edit name="family" mode="prepend" binding="strong">
+                <edit name="family" mode="prepend">
                   <string>Inter</string>
                 </edit>
               </match>
