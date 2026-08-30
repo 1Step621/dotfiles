@@ -27,7 +27,6 @@
         pkgs.gnome-logs
         pkgs.gnome-maps
         pkgs.gnome-music
-        pkgs.gnome-photos
         pkgs.gnome-weather
       ];
     };
