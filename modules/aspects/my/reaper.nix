@@ -81,6 +81,15 @@
             yabridgectl sync
           '';
         };
+
+        theme-name = "theme.ReaperThemeZip";
+        assets-path = ./. + "/../../assets";
+        theme-assets = builtins.path {
+          path = assets-path;
+          name = "reapertips-theme-assets";
+          filter = path: type: path == toString assets-path || baseNameOf path == theme-name;
+        };
+        theme-file = theme-assets + "/${theme-name}";
       in
       {
         imports = [
@@ -261,9 +270,9 @@
           };
 
           theme = {
-            active = "Reapertips Theme - Green - Noto CJK JP + Roboto Mono.ReaperThemeZip";
+            active = theme-name;
             colorThemes = [
-              (./. + "/../../assets/Reapertips Theme - Green - Noto CJK JP + Roboto Mono.ReaperThemeZip")
+              theme-file
             ];
           };
 
