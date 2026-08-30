@@ -98,6 +98,7 @@
 
         home.packages = [
           pkgs.vital
+          pkgs.surge-xt
           (pkgs.distrho-ports.override {
             plugins = [
               "dexed"
