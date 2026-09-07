@@ -99,6 +99,7 @@
         home.packages = [
           pkgs.vital
           pkgs.surge-xt
+          pkgs.geonkick
           (pkgs.distrho-ports.override {
             plugins = [
               "dexed"
