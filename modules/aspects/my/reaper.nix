@@ -5,6 +5,11 @@
   ...
 }:
 {
+  flake-file.inputs.reaper-flake = {
+    url = "github:9Prestidigitator/reaper-flake";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+
   my.reaper = {
     includes = [
       (den.batteries.unfree [
@@ -23,7 +28,7 @@
         ...
       }:
       let
-        reaper-pkgs = inputs.reaper-flake.packages.${pkgs.stdenv.hostPlatform.system};
+        reaper-flake-pkgs = inputs.reaper-flake.packages.${pkgs.stdenv.hostPlatform.system};
 
         wine = pkgs.wineWow64Packages.yabridge;
 
@@ -280,7 +285,7 @@
 
           swell.colortheme = {
             enable = true;
-            preset = reaper-pkgs.reapertips-theme;
+            preset = reaper-flake-pkgs.reapertips-theme;
           };
 
           actions.keyBindings = [

@@ -1,5 +1,13 @@
 { inputs, ... }:
 {
+  flake-file.inputs.xremap-flake = {
+    url = "github:xremap/nix-flake";
+    inputs = {
+      nixpkgs.follows = "nixpkgs";
+      xremap.follows = "";
+    };
+  };
+
   my.input = {
     homeManager = { pkgs, ... }: {
       home.packages = [
@@ -29,6 +37,7 @@
         };
       };
     };
+
     os = { user, ... }: {
       users.users."${user.userName}".extraGroups = [
         "input"

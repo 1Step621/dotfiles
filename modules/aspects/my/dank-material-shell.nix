@@ -1,5 +1,10 @@
 { inputs, my, ... }:
 {
+  flake-file.inputs.dank-material-shell = {
+    url = "github:AvengeMedia/DankMaterialShell";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+
   my.dank-material-shell = {
     includes = [ my.desktop ];
 

@@ -1,5 +1,17 @@
 { inputs, ... }:
 {
+  flake-file.inputs.niri-flake = {
+    url = "github:sodiboo/niri-flake/a2eb6a3475ecdb110d448537efb8b2ae43786bc6";
+    inputs = {
+      niri-stable.follows = "";
+      niri-unstable.follows = "";
+      nixpkgs-stable.follows = "";
+      nixpkgs.follows = "nixpkgs";
+      xwayland-satellite-stable.follows = "";
+      xwayland-satellite-unstable.follows = "";
+    };
+  };
+
   my.niri = {
     os = {
       programs.niri.enable = true;
