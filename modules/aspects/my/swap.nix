@@ -1,11 +1,19 @@
 {
   my.swap = {
     os = {
-      zramSwap = {
+      boot.zswap = {
         enable = true;
-        algorithm = "zstd";
-        memoryPercent = 50;
+        compressor = "zstd";
+        maxPoolPercent = 25;
+        shrinkerEnabled = true;
       };
+
+      swapDevices = [
+        {
+          device = "/var/lib/swapfile";
+          size = 16 * 1024;
+        }
+      ];
     };
   };
 }
