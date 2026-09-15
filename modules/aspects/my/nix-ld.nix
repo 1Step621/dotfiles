@@ -1,7 +1,15 @@
+{ den, ... }:
 {
   my.nix-ld = {
-    os = {
-      programs.nix-ld.enable = true;
+    includes = [
+      (den.batteries.unfree [ "steam-unwrapped" ])
+    ];
+
+    os = { pkgs, ... }: {
+      programs.nix-ld = {
+        enable = true;
+        libraries = pkgs.steam-run.args.multiPkgs pkgs;
+      };
     };
   };
 }
