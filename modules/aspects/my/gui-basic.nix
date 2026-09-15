@@ -9,6 +9,7 @@
       my.ripdrag
       my.xdg-utils
       my.wl-screenrec
+      my.steam-run
     ];
 
     homeManager = { pkgs, ... }: {
