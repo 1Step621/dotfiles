@@ -10,6 +10,7 @@
       my.xdg-utils
       my.wl-screenrec
       my.steam-run
+      my.appimage-run
     ];
 
     homeManager = { pkgs, ... }: {
