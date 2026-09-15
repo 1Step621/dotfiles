@@ -47,6 +47,7 @@
         pkgs.grim
         pkgs.pulseaudio
         pkgs.hyprpicker
+        pkgs.appimage-run
       ];
     };
   };
