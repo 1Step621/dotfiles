@@ -31,6 +31,7 @@
           pkgs.mold-unwrapped
           pkgs.clang-tools
           llm-agents-pkgs.opencode2
+          llm-agents-pkgs.opencode
           llm-agents-pkgs.codex
         ];
     };
