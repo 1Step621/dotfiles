@@ -6,8 +6,6 @@
       my.gapless
       my.mprisence
       my.rsrpc
-      my.reaper
-      my.openutau
     ];
   };
 }

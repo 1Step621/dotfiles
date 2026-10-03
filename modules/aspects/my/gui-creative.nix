@@ -3,6 +3,8 @@
   my.gui-creative = {
     includes = [
       my.desktop
+      my.reaper
+      my.openutau
     ];
 
     homeManager = { pkgs, ... }: {
