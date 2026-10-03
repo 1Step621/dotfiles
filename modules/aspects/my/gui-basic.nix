@@ -41,6 +41,7 @@
         pkgs.wlr-randr
         pkgs.pavucontrol
         pkgs.playerctl
+        pkgs.inotify-tools
         pkgs.pamixer
         pkgs.brightnessctl
         pkgs.wl-clipboard

@@ -12,8 +12,8 @@
       my.xdg-portal
       my.gtk-theme
       my.hyprlock
-      my.dank-material-shell
       my.fuzzel
+      my.silere
     ];
   };
 }

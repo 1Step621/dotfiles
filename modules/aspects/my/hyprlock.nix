@@ -5,7 +5,6 @@
 
     homeManager = { pkgs, ... }: {
       programs.niri.settings.binds."Mod+T".action.spawn = "hyprlock";
-      programs.dank-material-shell.settings.customPowerActionLock = "hyprlock";
       programs.hyprlock = {
         enable = true;
         settings = {
