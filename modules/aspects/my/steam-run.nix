@@ -1,8 +1,9 @@
-{ den, ... }:
+{ den, my, ... }:
 {
   my.steam-run = {
     includes = [
       (den.batteries.unfree [ "steam-unwrapped" ])
+      my.desktop
     ];
 
     homeManager = { pkgs, ... }: {
