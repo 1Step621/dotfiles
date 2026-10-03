@@ -19,6 +19,7 @@
         mediaProgress = true;
         mediaVisualizerStyle = "wave";
         mediaVisualizerPosition = "underline";
+        mediaVisualizerOpacity = 0.6;
         settingsNavDots = false;
         fontFamily = "RobotoMono Nerd Font";
         notifPopupEnabled = false;
@@ -47,6 +48,7 @@
         barWidgetOrderLeft = "clock";
         barWidgetOrderCenter = "workspaces,windowTitle";
         barWidgetOrderRight = "shellUpdate,tray,updates,media,bluetooth,microphone,brightness,volume,network,battery";
+        baseTone = "charcoal";
         wsMinVisible = 10;
         wsShowNumbers = true;
         wsShowAppIcons = true;
@@ -78,10 +80,7 @@
         layer-rules = [
           {
             matches = [ { namespace = "^silere-bar$"; } ];
-            background-effect = {
-              blur = true;
-              xray = false;
-            };
+            background-effect.blur = true;
           }
         ];
       };
