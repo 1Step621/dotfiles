@@ -38,6 +38,7 @@
             "https://yadokani389.cachix.org"
             "https://cache.numtide.com"
             "https://oxalica.cachix.org"
+            "https://pachipachi.cachix.org"
           ];
           trusted-public-keys = [
             "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
@@ -45,6 +46,7 @@
             "yadokani389.cachix.org-1:xHw9jijQFNDKlNprHbQpXX6cVOUO4m/n2lBfx6Bq4jg="
             "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
             "oxalica.cachix.org-1:h0iRBw6tQD8+51ZvnNEBPbwLR58UD7klauDBWzBdugQ="
+            "pachipachi.cachix.org-1:RLf57/pbi0GJh6SBUEM4HdDSYI4lKNR0OzZp43qkeTw="
           ];
         };
       };

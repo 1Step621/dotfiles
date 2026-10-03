@@ -36,6 +36,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    pachipachi.url = "github:1Step621/pachipachi";
     reaper-flake = {
       url = "github:9Prestidigitator/reaper-flake";
       inputs.nixpkgs.follows = "nixpkgs";
